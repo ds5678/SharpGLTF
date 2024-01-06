@@ -82,6 +82,9 @@ namespace SharpGLTF.Geometry.VertexTypes
         #if NET6_0_OR_GREATER
         [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
         #endif
+        #if NET8_0_OR_GREATER
+        [RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public static Type GetVertexBuilderType(params string[] vertexAttributes)
         {
             var tvg = GetVertexGeometryType(vertexAttributes);
@@ -95,6 +98,9 @@ namespace SharpGLTF.Geometry.VertexTypes
 
         #if NET6_0_OR_GREATER
         [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        #endif
+        #if NET8_0_OR_GREATER
+        [RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
         #endif
         public static Type GetVertexBuilderType(bool hasNormals, bool hasTangents, int numCols, int numUV, int numJoints)
         {

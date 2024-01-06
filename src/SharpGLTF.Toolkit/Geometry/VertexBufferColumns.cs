@@ -322,6 +322,9 @@ namespace SharpGLTF.Geometry
         #if NET6_0_OR_GREATER
         [return: System.Diagnostics.CodeAnalysis.DynamicallyAccessedMembers(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicConstructors)]
         #endif
+        #if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public Type GetCompatibleVertexType()
         {
             var hasNormals = Normals != null;

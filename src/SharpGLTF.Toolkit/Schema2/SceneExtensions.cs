@@ -206,6 +206,9 @@ namespace SharpGLTF.Schema2
         /// <param name="animation">An <see cref="Animation"/> instance, or null.</param>
         /// <param name="time">The animation time.</param>
         /// <returns>A collection of triangles in world space.</returns>
+        #if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public static IEnumerable<(IVertexBuilder A, IVertexBuilder B, IVertexBuilder C, Material Material)> EvaluateTriangles(this Scene scene, Runtime.RuntimeOptions options = null, Animation animation = null, float time = 0)
         {
             if (scene == null) return Enumerable.Empty<(IVertexBuilder, IVertexBuilder, IVertexBuilder, Material)>();

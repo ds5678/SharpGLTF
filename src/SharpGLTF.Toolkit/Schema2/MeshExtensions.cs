@@ -468,6 +468,9 @@ namespace SharpGLTF.Schema2
 
         #region evaluation
 
+        #if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public static IEnumerable<(IVertexBuilder A, Material Material)> EvaluatePoints(this Mesh mesh, MESHXFORM xform = null)
         {
             if (mesh == null) return Enumerable.Empty<(IVertexBuilder, Material)>();
@@ -475,6 +478,9 @@ namespace SharpGLTF.Schema2
             return mesh.Primitives.SelectMany(item => item.EvaluatePoints(xform));
         }
 
+        #if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public static IEnumerable<(IVertexBuilder A, Material Material)> EvaluatePoints(this MeshPrimitive prim, MESHXFORM xform = null)
         {
             if (prim == null) yield break;
@@ -503,6 +509,9 @@ namespace SharpGLTF.Schema2
             }
         }
 
+        #if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public static IEnumerable<(IVertexBuilder A, IVertexBuilder B, Material Material)> EvaluateLines(this Mesh mesh, MESHXFORM xform = null)
         {
             if (mesh == null) return Enumerable.Empty<(IVertexBuilder, IVertexBuilder, Material)>();
@@ -510,6 +519,9 @@ namespace SharpGLTF.Schema2
             return mesh.Primitives.SelectMany(item => item.EvaluateLines(xform));
         }
 
+        #if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public static IEnumerable<(IVertexBuilder A, IVertexBuilder B, Material Material)> EvaluateLines(this MeshPrimitive prim, MESHXFORM xform = null)
         {
             if (prim == null) yield break;
@@ -535,6 +547,9 @@ namespace SharpGLTF.Schema2
             }
         }
 
+        #if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public static IEnumerable<(IVertexBuilder A, IVertexBuilder B, IVertexBuilder C, Material Material)> EvaluateTriangles(this Mesh mesh, MESHXFORM xform = null)
         {
             if (mesh == null) return Enumerable.Empty<(IVertexBuilder, IVertexBuilder, IVertexBuilder, Material)>();
@@ -542,6 +557,9 @@ namespace SharpGLTF.Schema2
             return mesh.Primitives.SelectMany(item => item.EvaluateTriangles(xform));
         }
 
+        #if NET8_0_OR_GREATER
+        [System.Diagnostics.CodeAnalysis.RequiresDynamicCode("The native code for the generic instantiation might not be available at runtime.")]
+        #endif
         public static IEnumerable<(IVertexBuilder A, IVertexBuilder B, IVertexBuilder C, Material Material)> EvaluateTriangles(this MeshPrimitive prim, MESHXFORM xform = null)
         {
             if (prim == null) yield break;
